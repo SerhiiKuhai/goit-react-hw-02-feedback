@@ -41,7 +41,10 @@ export class App extends Component {
     return (
       <Container>
         <Section title="Please leave feedback">
-          <FeedbackOptions onLeaveFeedback={this.handleClick} />
+          <FeedbackOptions
+            options={Object.keys(this.state)}
+            onLeaveFeedback={this.handleClick}
+          />
         </Section>
         <Section title="Statistics">
           {this.countTotalFeedback() !== 0 ? (

@@ -4,13 +4,16 @@ import { Container, Button } from './FeedbackOptions.styled';
 
 export class FeedbackOptions extends Component {
   render() {
-    const { onLeaveFeedback } = this.props;
+    const { onLeaveFeedback, options } = this.props;
+
     return (
       <>
         <Container onClick={onLeaveFeedback}>
-          <Button name="good">Good</Button>
-          <Button name="neutral">Neutral</Button>
-          <Button name="bad">Bad</Button>
+          {options.map(option => (
+            <Button type="button" name={option}>
+              {option}
+            </Button>
+          ))}
         </Container>
       </>
     );
@@ -19,4 +22,5 @@ export class FeedbackOptions extends Component {
 
 FeedbackOptions.propTypes = {
   onLeaveFeedback: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired,
 };
