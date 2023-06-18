@@ -8,9 +8,9 @@ export class FeedbackOptions extends Component {
 
     return (
       <>
-        <Container onClick={onLeaveFeedback}>
+        <Container>
           {options.map(option => (
-            <Button type="button" name={option}>
+            <Button type="button" name={option} onClick={onLeaveFeedback}>
               {option}
             </Button>
           ))}
